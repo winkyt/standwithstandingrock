@@ -392,7 +392,7 @@
     $('#cloud').jQCloud('destroy');
     $('#cloud').jQCloud(frequency_list,{
         // shape: 'rectangular',
-        // colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"]
+		colors: ['#004529','#addd8e','#78c679','#bd0026','#238443','#7fcdbb','#41b6c4','#1d91c0']
     });
 
 
@@ -673,7 +673,7 @@
             attribution: 'Tiles &copylogo.png; Esri &mdash; Esri, DeLorme, NAVTEQ',
             maxZoom: 16
         })],
-        // https: also suppported.
+
         'Esri_WorldPhysical' : [L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
             maxZoom: 8
@@ -691,7 +691,7 @@
         checkin: {lat: 46.45, lng:-100.71, zoom: 7,name: 'Info',position: 'fullpage'},
         map_intro: {lat: 46.45, lng:-100.95, zoom: 10,name: 'StandingRock', layers:[ 'Esri_WorldPhysical', 'standingrock','aquifer', 'riverwhole', 'PhotoLayers1','ND_marker1','SR_marker']},
         map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['Esri_WorldPhysical','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2','SR_marker2']},
-        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['basemapmapbox','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','SR_marker3', 'PhotoLayers3']},
+        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['Esri_WorldPhysical','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','SR_marker3', 'PhotoLayers3']},
         map_hex: {lat: 47, lng:-102, zoom: 7,name: 'Facebook', layers:['CartoDB_Positron','checkin_marker']},
         map_hex_case1: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','fb_symbol']},
         map_hex_case2: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','hex']},
