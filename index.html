@@ -215,7 +215,7 @@
 
 			<section data-scene="map_camp">
 				<h3>Protest Camp</h3>
-				<p>The Sacred Stone Camp: has been protesting the Dakota Access pipeline since April. The location plays a major role in protecting the site. In August, it grew dramatically in scope.
+				<p><i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: green"></i>The Sacred Stone Camp: has been protesting the Dakota Access pipeline since April. The location plays a major role in protecting the site. In August, it grew dramatically in scope.
 				</p>
 				<br/><br/>
 				<p>The Oceti Sakowin Camp: a historic gathering for native tribes. They are also standing in solidarity to halt the Dakota Access Pipeline.
@@ -282,8 +282,7 @@
 						<!--<br>-->
 						<!--Location is not only where you are, <br/>-->
 						<!--but also where you choose to <b>stand</b>.-->
-						Because the government expelled the protesters, the local camp has been forcibly displaced. Although the local Native Americans and other environmentalists cannot express their opinion at the location of Standing Rock, this has not ended support. Through social media, such as Facebook, people check-in to #StandingRock from around the world to show their support.
-					</p>
+						Due to the fierce local conflict triggered by the proposed pipeline, environmental protestors were forced to leave their camping area at the Standing Rock. Today, it has become nearly impssible for people to access the former camping area. Even though, an increasing number of social media users still stand with #StandingRock via spoofing their check-ins on Facebook.					</p>
                     <!--<p class="text-center quote">“This Movement Has Been Special.”<br/>&#45;&#45;Leader of Standing Rock Sioux</p>-->
 
 					<p class="credit">
@@ -358,19 +357,19 @@
 
     function wordFrequency(txt){
 
-//        var normal_words = [
-//            "to", "that", "this", "I", "them", "do", "This",
-//            "the", "do", "See", "The", "and", "has", "have",
-//            "me", "we", "who", "what", "out", "Will", "on",
-//            "are", "s", "not", "may", "been", "you", "it"
-//        ];
-//
-//
-//        for (var i = 0; i < normal_words.length; i++) {
-//            txt = txt.replace(normal_words[i], "");
-//        }
-//
-//        txt = txt.replace("  ", "");
+        /*var normal_words = [
+            "to", "that", "this", "I", "them", "do", "This",
+            "the", "do", "See", "The", "and", "has", "have",
+           "me", "we", "who", "what", "out", "Will", "on",
+            "are", "s", "not", "may", "been", "you", "it"
+        ];
+
+
+        for (var i = 0; i < normal_words.length; i++) {
+            txt = txt.replace(normal_words[i], "");
+        }
+
+        txt = txt.replace("  ", "");*/
 
         var wordArray = txt.split(/[ .?!,*'"]/);
         var newArray = [], wordObj;
@@ -392,7 +391,8 @@
     $('#cloud').jQCloud('destroy');
     $('#cloud').jQCloud(frequency_list,{
         // shape: 'rectangular',
-		colors: ['#004529','#addd8e','#78c679','#bd0026','#238443','#7fcdbb','#41b6c4','#1d91c0']
+
+		colors:['#fee08b', '#ffffbf', '#d9ef8b','#d73027','#f46d43','#fdae61','#7fcdbb','#41b6c4','#1a9850']
     });
 
 
@@ -472,21 +472,21 @@
 
     checkin_marker.bindTooltip("@Standing Rock",{sticky: false, className: "checkin-label",permanent: true});
 
-    var SR_marker1 = L.marker([46.2, -100.64],
+    var SR_marker1 = L.marker([46.2, -100.7],
         { opacity: 0 }); //opacity may be set to zero
     SR_marker1.bindTooltip("Standing Rock<br/> Indian Reservation", {
         permanent: true,
         className: "sr-label text-center",
         offset: [0, 0]
     });
-    var SR_marker2 = L.marker([46.3, -100.64],
+    var SR_marker2 = L.marker([46.35, -100.64],
         { opacity: 0 }); //opacity may be set to zero
     SR_marker2.bindTooltip("Standing Rock<br/> Indian Reservation", {
         permanent: true,
         className: "sr-label text-center",
         offset: [0, 0]
     });
-    var SR_marker3 = L.marker([46.37, -100.64],
+    var SR_marker3 = L.marker([46.39, -100.64],
         { opacity: 0 }); //opacity may be set to zero
     SR_marker3.bindTooltip("Standing Rock<br/> Indian Reservation", {
         permanent: true,
@@ -494,11 +494,11 @@
         offset: [0, 0]
     });
 
-    var ND_marker1 = L.marker([46.5, -100.64],
+    var ND_marker1 = L.marker([46.53, -100.64],
         { opacity: 0 }); //opacity may be set to zero
-    ND_marker1.bindTooltip("North<br/> Dakota", {
+    ND_marker1.bindTooltip("North  &nbsp Dakota", {
         permanent: true,
-        className: "sr-label text-center",
+        className: "nd-label text-center",
         offset: [0, 0]
     });
 
@@ -689,9 +689,9 @@
     var scenes = {
         overview: {lat: 46.45, lng:-100.71, zoom: 7, name: 'Home',position: 'fullpage'},
         checkin: {lat: 46.45, lng:-100.71, zoom: 7,name: 'Info',position: 'fullpage'},
-        map_intro: {lat: 46.45, lng:-100.95, zoom: 10,name: 'StandingRock', layers:[ 'Esri_WorldPhysical', 'standingrock','aquifer', 'riverwhole', 'PhotoLayers1','ND_marker1','SR_marker']},
-        map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['Esri_WorldPhysical','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2','SR_marker2']},
-        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['Esri_WorldPhysical','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','SR_marker3', 'PhotoLayers3']},
+        map_intro: {lat: 46.45, lng:-100.95, zoom: 10,name: 'StandingRock', layers:[ 'Esri_WorldPhysical', 'standingrock','aquifer', 'riverwhole', 'PhotoLayers1','ND_marker1','SR_marker1']},
+        map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['Esri_WorldPhysical','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2','ND_marker1','SR_marker2']},
+        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['Esri_WorldPhysical','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','ND_marker1','SR_marker3', 'PhotoLayers3']},
         map_hex: {lat: 47, lng:-102, zoom: 7,name: 'Facebook', layers:['CartoDB_Positron','checkin_marker']},
         map_hex_case1: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','fb_symbol']},
         map_hex_case2: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','hex']},

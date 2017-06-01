@@ -304,9 +304,28 @@ p{
     width:200px;
     font-size:20px;
     background-color: transparent;
+    opacity: 0.9
 }
 
 .sr-label:before{
+    border-left-color: rgba(0,0,0, 0);
+}
+
+
+.nd-label{
+    /*font-weight: bold;*/
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+    position: relative;
+    border: 0px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0)  !important;
+    width:200px;
+    font-size:40px;
+    background-color: transparent;
+    opacity: 0.9
+}
+
+.nd-label:before{
     border-left-color: rgba(0,0,0, 0);
 }
 
