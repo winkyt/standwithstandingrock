@@ -78,12 +78,19 @@
     font-size: 18px;
 }
 
+.legend-custom p i {
+    line-height:30px;
+    font-size: 18px;
+}
+
 .legend-custom i {
     width: 18px;
     height: 18px;
     /*float: left;*/
     opacity: 0.9;
-    margin-top: 5px}
+    margin-top: 5px;
+    margin-right: 0px
+}
 
 section p {
 
@@ -138,7 +145,7 @@ h3{
     color: #000000;
     font-family: 'Titillium Web', serif;
     font-size:30px;
-    margin-top: -23%;
+    margin-top: -15%;
     margin-bottom: 2.5%;
     color: rgba(0, 0, 0, 0.95);
     text-shadow: 0 0 1px rgba(255, 255, 255, 1);
@@ -146,7 +153,7 @@ h3{
 
 .h3_info{
     font-size:50px;
-    margin-top: -5%;
+    margin-top: -3%;
 }
 
 h4{
@@ -170,11 +177,12 @@ p{
     font-size:35px;
     color: white;
     text-shadow: 0 0 4px black;
-    margin-left: 35%;
-    margin-right: 6%;
+    margin-left: 5%;
+    /*margin-right: 40%;*/
     text-align:justify;
     position:absolute;
-    top: 40%;
+    top: 20%;
+    right: 30%
 }
 
 .description{
@@ -304,13 +312,12 @@ p{
 
 .marker-icon {
 
-    color: green;
+    color: #006080;
     font-size: 45px;
     text-shadow: 0 0 2px #ffffff;
 }
 
 .checkin-label {
-
     text-shadow: 0 0 2px rgba(255, 255, 255, 1);
     position: relative;
     border: 0px !important;

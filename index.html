@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>#Stand with Standing Rock</title>
+	<title>Stand with #Standing Rock</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="StandingRock" />
@@ -62,7 +62,7 @@
 			<img src="img/favicon.ico" class="align-top" height="20px" align="left"> &nbsp;
 		</a>
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">#Stand with Standing Rock</a>
+			<a class="navbar-brand" href="#">Stand with #Standing Rock</a>
 		</div>
 
 		<div class="collapse navbar-collapse">
@@ -122,7 +122,7 @@
 			<section data-scene="overview">
 				<div class= "overview-background-img background-fullscreen-setting text-responsive">
 					<!--<h1 class="text-center">#Standing Rock</h1>-->
-					<h1>#Stand with Standing Rock</h1>
+					<h1>Stand with #Standing Rock</h1>
 					<h2 class="h2_overview">
 						The Dakota Access Pipeline Protest (#NoDAPL) began in early 2016 in reaction to the approved construction of Energy Transfer Partners' Dakota Access Pipeline in the northern United States. The pipeline passes through Lake Oahe near the Standing Rock Indian Reservation. <br/>On October 31 2016, a Facebook post said that the Morton County sheriff’s department was using Facebook check-ins to target people at the protest camp. People answered the call on Facebook to ‘overwhelm and confuse’ law enforcement officials, although police denied tracking activists.
 					</h2>
@@ -179,7 +179,7 @@
                         <div class="text-center linechart"></div>
 						</div>
 					<div>
-                    <h4 class="text-center">Numbers represent search interest relative to the highest point on the chart for the given region and time.<br/>A value of 100 is the peak popularity for the term (Google Trends).</h4>
+                    <h4 class="text-center">Google trends index shows that Standing Rock became a hot topic in November 2016.</h4>
 					</div>
 				</div>
 
@@ -260,9 +260,9 @@
 				<br/><br/>
 				<div id="cloud">
 				</div>
-				<p>check-in count</p>
+				<p>check-in count: </p>
 				<div class="legend legend-custom">
-					<i style="background: transparent;"></i>
+					<p>&nbsp;low</p>
 					<i style="background: rgb(255,255,178);"></i>
 					<i style="background: rgb(254,204,92)"></i>
 					<i style="background: rgb(253,141,60);"></i>
@@ -276,14 +276,15 @@
 			<section data-scene="end">
 				<div class= "end-background-img background-fullscreen-setting text-responsive">
 					<p class ="text-center p_end">
-						They are not physically there. <br/>
-						They use <b>social media</b> as a <b>cyber projection</b> of themselves.<br/>
-						They show their support though <b>virtual presence</b>.<br/>
-						<br>
-						Location is not only where you are, <br/>
-						but also where you choose to <b>stand</b>.
+						<!--They are not physically there. <br/>-->
+						<!--They use <b>social media</b> as a <b>cyber projection</b> of themselves.<br/>-->
+						<!--They show their support though <b>virtual presence</b>.<br/>-->
+						<!--<br>-->
+						<!--Location is not only where you are, <br/>-->
+						<!--but also where you choose to <b>stand</b>.-->
+						Because the government expelled the protesters, the local camp has been forcibly displaced. Although the local Native Americans and other environmentalists cannot express their opinion at the location of Standing Rock, this has not ended support. Through social media, such as Facebook, people check-in to #StandingRock from around the world to show their support.
 					</p>
-                    <p class="text-center quote">“This Movement Has Been Special.”<br/>--Leader of Standing Rock Sioux</p>
+                    <!--<p class="text-center quote">“This Movement Has Been Special.”<br/>&#45;&#45;Leader of Standing Rock Sioux</p>-->
 
 					<p class="credit">
 						<img class="credit" src="img/grouplogo.png" class="align-top" height="40px" align="right"><br/>
@@ -471,9 +472,31 @@
 
     checkin_marker.bindTooltip("@Standing Rock",{sticky: false, className: "checkin-label",permanent: true});
 
-    var SR_marker = L.marker([46.2, -100.64],
+    var SR_marker1 = L.marker([46.2, -100.64],
         { opacity: 0 }); //opacity may be set to zero
-    SR_marker.bindTooltip("Standing Rock<br/> Indian Reservation", {
+    SR_marker1.bindTooltip("Standing Rock<br/> Indian Reservation", {
+        permanent: true,
+        className: "sr-label text-center",
+        offset: [0, 0]
+    });
+    var SR_marker2 = L.marker([46.3, -100.64],
+        { opacity: 0 }); //opacity may be set to zero
+    SR_marker2.bindTooltip("Standing Rock<br/> Indian Reservation", {
+        permanent: true,
+        className: "sr-label text-center",
+        offset: [0, 0]
+    });
+    var SR_marker3 = L.marker([46.37, -100.64],
+        { opacity: 0 }); //opacity may be set to zero
+    SR_marker3.bindTooltip("Standing Rock<br/> Indian Reservation", {
+        permanent: true,
+        className: "sr-label text-center",
+        offset: [0, 0]
+    });
+
+    var ND_marker1 = L.marker([46.5, -100.64],
+        { opacity: 0 }); //opacity may be set to zero
+    ND_marker1.bindTooltip("North<br/> Dakota", {
         permanent: true,
         className: "sr-label text-center",
         offset: [0, 0]
@@ -572,7 +595,12 @@
     var layers = {
 		'checkin_marker' : [checkin_marker],
 
-        'SR_marker' : [SR_marker],
+        'SR_marker1' : [SR_marker1],
+        'SR_marker2' : [SR_marker2],
+        'SR_marker3' : [SR_marker3],
+
+        'ND_marker1' : [ND_marker1],
+
 
         'fb_symbol' : [fb_symbol],
 
@@ -605,12 +633,6 @@
             opacity: 0.5,})
         ],
 
-        'counties': [ L.geoJson.ajax('assets/countries.geo.json',  {
-            color: '#006080',
-            weight: 3000,
-            opacity: 1
-        })
-        ],
         'pipeline': [ L.geoJson.ajax('assets/pipeline.geojson',  {
             lineCap: "butt",
             color: "#B51E1E",
@@ -631,7 +653,7 @@
 
 		'basemapmapbox' :[ L.mapboxGL({
             accessToken: 'pk.eyJ1IjoidGlhbnkiLCJhIjoiY2oyOGFyemhzMDBlZjJ3cWtydjBpMHZzdSJ9.KB4Qs2my3g97OeJSPLIHOw',
-			style: 'assets/basemap/style.json',
+			style: 'assets/style.json',
             subdomains: 'abcd',
             maxZoom: 9,
             minZoom: 4
@@ -651,6 +673,11 @@
             attribution: 'Tiles &copylogo.png; Esri &mdash; Esri, DeLorme, NAVTEQ',
             maxZoom: 16
         })],
+        // https: also suppported.
+        'Esri_WorldPhysical' : [L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
+            maxZoom: 8
+        })],
         'CartoDB_Positron' : [ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png')],
         'CartoDB_DarkMatter' : [L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}@2x.png')],
         'PhotoLayers1': [photoLayer1],
@@ -662,9 +689,9 @@
     var scenes = {
         overview: {lat: 46.45, lng:-100.71, zoom: 7, name: 'Home',position: 'fullpage'},
         checkin: {lat: 46.45, lng:-100.71, zoom: 7,name: 'Info',position: 'fullpage'},
-        map_intro: {lat: 46.45, lng:-100.95, zoom: 10,name: 'StandingRock', layers:[ 'basemapmapbox', 'standingrock','aquifer', 'riverwhole','SR_marker', 'PhotoLayers1']},
-        map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['basemapmapbox','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2']},
-        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['basemapmapbox','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol', 'PhotoLayers3']},
+        map_intro: {lat: 46.45, lng:-100.95, zoom: 10,name: 'StandingRock', layers:[ 'Esri_WorldPhysical', 'standingrock','aquifer', 'riverwhole', 'PhotoLayers1','ND_marker1','SR_marker']},
+        map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['Esri_WorldPhysical','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2','SR_marker2']},
+        map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['basemapmapbox','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','SR_marker3', 'PhotoLayers3']},
         map_hex: {lat: 47, lng:-102, zoom: 7,name: 'Facebook', layers:['CartoDB_Positron','checkin_marker']},
         map_hex_case1: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','fb_symbol']},
         map_hex_case2: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','hex']},
@@ -681,7 +708,6 @@
             // create a map in the "map" div, set the view to a given place and zoom
             var map = L.map('map', {zoomControl: false, scrollWheelZoom: false,maxZoom: 14}).setView([44.1347254, -122.7411479], 7);
 
-//            close zomm
 //            L.control.zoom({ position: 'bottomright'}).addTo(map);
 //            stripes.addTo(map);
 
