@@ -215,19 +215,26 @@
 
 			<section data-scene="map_camp">
 				<h3>Protest Camp</h3>
-				<p><i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: green"></i>The Sacred Stone Camp: has been protesting the Dakota Access pipeline since April. The location plays a major role in protecting the site. In August, it grew dramatically in scope.
+				<p>
+					<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: #E86ACA"></i>
+					The Sacred Stone Camp: has been protesting the Dakota Access pipeline since April. The location plays a major role in protecting the site. In August, it grew dramatically in scope.
 				</p>
 				<br/><br/>
-				<p>The Oceti Sakowin Camp: a historic gathering for native tribes. They are also standing in solidarity to halt the Dakota Access Pipeline.
-
-					The location is a world stage for environmental awareness and will act as a future indigenous meeting center.</p>
+				<p>
+					<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: #2A75EA"></i>
+					The Oceti Sakowin Camp: a historic gathering for native tribes. They are also standing in solidarity to halt the Dakota Access Pipeline.
+					The location is a world stage for environmental awareness and will act as a future indigenous meeting center.
+				</p>
 				<br/><br/>
-				<p>Frontline Camp: Water protectors erected a new Frontline Camp directly in path of the Dakota Access Pipeline</p>
+				<p>
+					<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: #08D587"></i>
+					Frontline Camp: Water protectors erected a new Frontline Camp directly in path of the Dakota Access Pipeline
+				</p>
 				<div class="legend legend-custom">
 					<i style="background: #ABD1E8"></i><p>Aquifer</p><br/>
 					<i style="background: orange"></i><p>Standing Rock</p><br/>
 					<i style="background: #B51E1E"></i><p>Pipeline</p><br/>
-					<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: green"></i><p>Protest Camp</p>
+					<!--<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: green"></i><p>Protest Camp</p>-->
 					<br/>
 				</div>
 				<div class="embeded-photo img-responsive"></div>
@@ -503,12 +510,24 @@
     });
 
 
+//    var colors = ['#E86ACA','#2A75EA','#08D587'];
+//    for (i =1; i < 11; i++) {
+//        $('html > head').append($("<style> .marker-icon-" + i.toString() + " { color: " + colors[i] + "; font-size: 30px; text-shadow: 0 0 3px #ffffff;} </style>"));
+//    }
 
     var camp_symbol = L.geoJson.ajax('assets/camp.geojson', {
         pointToLayer: function (feature, latlng) {
             delay = Math.floor((126 + latlng.lng) / 10 * 2000);
             //delay =Math.floor(Math.random() * 400);
-            return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-tent marker-icon'})});
+            if (feature.properties.camp_nam === "Oceti Sakowin") {
+                return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-tent camp-icon-1'})});
+            } else if (feature.properties.camp_nam === "Sacred Stones Camp") {
+                return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-tent camp-icon-2'})});
+            } else if (feature.properties.camp_nam === "Frontline Camp") {
+                return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-tent camp-icon-3'})});
+            } else {
+                return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-tent '})});
+            }
         },
         onEachFeature: function (feature, layer) {
             layer.bindTooltip(feature.properties.camp_nam, {sticky: false, className: "feature-label",permanent: false});
