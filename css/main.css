@@ -89,11 +89,10 @@
     /*float: left;*/
     opacity: 0.9;
     margin-top: 5px;
-    margin-right: 0px
+    margin-right: 5px
 }
 
 section p {
-
     height: 18px;
 }
 
@@ -191,7 +190,7 @@ p{
 }
 
 .end-background-img {
-    background: url("../img/endpage.jpg") no-repeat center center fixed;
+    background: url("../img/people81.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -293,8 +292,28 @@ p{
     from { opacity: 0.3; }
 }
 
+.sr-label1{
+    color: gray;
+    font-family: 'Kreon', serif;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+    position: relative;
+    border: 0px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0)  !important;
+    width:200px;
+    font-size:13px;
+    background-color: transparent;
+    opacity: 0.9
+}
+
+.sr-label1:before{
+    border-left-color: rgba(0,0,0, 0);
+}
 
 .sr-label{
+    color: gray;
+    font-family: 'Kreon', serif;
     font-weight: bold;
     font-style: italic;
     text-shadow: 0 0 2px rgba(255, 255, 255, 1);
@@ -311,9 +330,10 @@ p{
     border-left-color: rgba(0,0,0, 0);
 }
 
-
 .nd-label{
     /*font-weight: bold;*/
+    color: lightgray;
+    font-family: 'Kreon', serif;
     font-style: italic;
     text-shadow: 0 0 2px rgba(255, 255, 255, 1);
     position: relative;
@@ -330,9 +350,8 @@ p{
 }
 
 .marker-icon {
-
     color: #006080;
-    font-size: 45px;
+    font-size: 53px;
     text-shadow: 0 0 2px #ffffff;
 }
 
