@@ -1,16 +1,16 @@
 var photos1 = [{
     lat: 46.414719,
     lng: -100.615682,
-    thumbnail: "JVimage/people1.jpg",
-    url: "JVimage/people1.jpg",
-    caption: "Native American at Standing Rock"
+    thumbnail: "img/cluster/1Indian1.jpg",
+    url: "img/cluster/1Indian1.jpg",
+    caption: "Sioux Indians"
 }, {
     lat: 46.3,
     lng: -100.7,
-    thumbnail: "JVimage/people2.jpg",
-    url: "JVimage/people2.jpg",
+    thumbnail: "img/cluster/1Indian2.jpg",
+    url: "img/cluster/1Indian2.jpg",
     caption: "Native American at Standing Rock"
-}, {
+/*}, {
     lat: 46.5,
     lng: -100.8,
     thumbnail: "JVimage/people3.jpg",
@@ -27,7 +27,7 @@ var photos1 = [{
     lng: -100.66,
     thumbnail: "JVimage/people5.jpg",
     url: "JVimage/people5.jpg",
-    caption: "Native American at Standing Rock"
+    caption: "Native American at Standing Rock"*/
 }];
 
 var photos2 = [{
@@ -51,8 +51,8 @@ var photos2 = [{
 }, {
     lat: 46.455,
     lng: -100.58,
-    thumbnail: "JVimage/kid.jpg",
-    url: "JVimage/kid.jpg",
+    thumbnail: "img/cluster/2river.jpg",
+    url: "img/cluster/2river.jpg",
     caption: "protest: kid"
 }, {
     lat: 46.45,

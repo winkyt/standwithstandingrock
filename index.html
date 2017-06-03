@@ -194,7 +194,7 @@
 				</p>
 				<div class="legend legend-custom">
 					<br/>
-					<i style="background: orange"></i><p>Standing Rock</p><br/>
+					<i style="background: orange"></i><p>Reservation</p><br/>
 				</div>
 				<div class="embeded-photo img-responsive"></div>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -207,8 +207,8 @@
 				<br/><br/>
 				<p>The Dakota Access Pipeline has drawn parallels to the Keystone XL pipeline. Opposition to that project, which Obama eventually rejected, became a litmus test in the eyes of some activists for public officials to show their commitment to addressing environmental issues. But at the same time significant differences remain. Perhaps most importantly, Keystone crossed into Canada, making it an international issue that gave authority over its final approval to the State Department. The federal government has the authority over the Dakota Access Pipeline because it crosses interstate waterways. Stopping the project would be challenging for any administration.</p>
 				<div class="legend legend-custom">
-					<i style="background: #ABD1E8;"></i><p>Water</p><br/>
-					<i style="background: orange"></i><p>Standing Rock</p><br/>
+					<i style="background: #ABD1E8;"></i><p>Aquifer and River</p><br/>
+					<i style="background: orange"></i><p>Reservation</p><br/>
 					<i style="background: #B51E1E;"></i><p>Pipeline</p><br/>
 				</div>
 				<div class="embeded-photo img-responsive"></div>
@@ -233,8 +233,8 @@
 					Frontline Camp: Water protectors erected a new Frontline Camp directly in path of the Dakota Access Pipeline
 				</p>
 				<div class="legend legend-custom">
-					<i style="background: #ABD1E8"></i><p>Water</p><br/>
-					<i style="background: orange"></i><p>Standing Rock</p><br/>
+					<i style="background: #ABD1E8"></i><p>Aquifer and River</p><br/>
+					<i style="background: orange"></i><p>Reservation</p><br/>
 					<i style="background: #B51E1E"></i><p>Pipeline</p><br/>
 					<!--<i class="glyphicon glyphicon-tent mark-icon point-legend" style="color: green"></i><p>Protest Camp</p>-->
 					<br/>
@@ -402,8 +402,14 @@
     $('#cloud').jQCloud(frequency_list,{
         // shape: 'rectangular',
 
-		colors:['#fee08b', '#ffffbf', '#d9ef8b','#d73027','#f46d43','#fdae61','#7fcdbb','#41b6c4','#1a9850']
+		colors:
+            ['#b2182b','#d6604d','#f4a582','#542788','#8073ac','#b2abd2','#92c5de','#4393c3','#2166ac']
     });
+
+//    ['#b35806','#e08214','#fdb863','#fee0b6','#f7f7f7','#d8daeb','#b2abd2','#8073ac','#542788']
+
+//    colors:['#fee08b', '#ffffbf', '#d9ef8b','#d73027','#f46d43','#fdae61','#7fcdbb','#41b6c4','#1a9850']
+//    });
 
 
 
@@ -487,7 +493,7 @@
     SR_marker1.bindTooltip("Standing Rock<br/> Indian Reservation", {
         permanent: true,
         className: "sr-label1 text-center",
-        offset: [0, 0]
+        offset: [0, 0],
     });
     var SR_marker2 = L.marker([46.35, -100.64],
         { opacity: 0 }); //opacity may be set to zero
@@ -631,8 +637,12 @@
         'aquifer': [ L.geoJson.ajax('assets/aquifer.geojson',  {
             color: '#ABD1E8',
             weight: 0,
-			fillOpacity: 0.5
-            //opacity: 0.9
+			fillOpacity: 0.5,
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip('river name: ' + feature.properties.NAME, {sticky: true, className: "feature-label",permanent: false, offset: [-10, -145]})
+
+            }
+    //opacity: 0.9
 			 })
         ],
         'rivermain': [ L.geoJson.ajax('assets/rivermain.geojson',  {
@@ -661,7 +671,11 @@
             weight: 25,
             dashArray: "50 25",
             className: 'pipeline_pattern',
-			opacity: 0.7
+			opacity: 0.7,
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip({latlng: latlng});
+            }
+
         })
         ],
 
@@ -739,7 +753,7 @@
         map_intro: {lat: 46.45, lng:-103, zoom: 7,name: 'StandingRock', layers:[ 'CartoDB_Positron', 'standingrock', 'PhotoLayers1','SR_marker1']},
         map_pipeline: {lat: 46.45, lng:-100.82, zoom: 11,name: 'Pipeline', layers:['Esri_WorldPhysical','standingrock', 'aquifer',  'rivermain','riverwhole', 'pipeline', 'PhotoLayers2','ND_marker1','SR_marker2']},
         map_camp: {lat: 46.45, lng:-100.71,  zoom: 12,name: 'Protest', layers:['Esri_WorldPhysical','standingrock','aquifer', 'rivermain','riverwhole', 'pipeline', 'camp_symbol','ND_marker1','SR_marker3', 'PhotoLayers3']},
-        map_hex: {lat: 47, lng:-102, zoom: 7,name: 'Facebook', layers:['CartoDB_Positron','checkin_marker']},
+        map_hex: {lat: 47, lng:-103.5, zoom: 7,name: 'Facebook', layers:['CartoDB_Positron','checkin_marker']},
         map_hex_case1: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','fb_symbol']},
         map_hex_case2: {lat: 40, lng:-100.55, zoom: 5,name: 'Facebook', layers:[ 'CartoDB_Positron','hex']},
         end: {lat: 46.45, lng:-100.71, zoom: 7,name: 'End', position:'fullpage'}
