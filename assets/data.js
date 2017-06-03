@@ -45,9 +45,9 @@ var photos2 = [{
 }, {
     lat:  46.43714709713302,
     lng: -100.59288024902345,
-    thumbnail: "img/cluster/3watercheck.jpg",
-    url: "img/cluster/3watercheck.jpg",
-    caption: "environment protector"
+    thumbnail: "img/cluster/2river.jpg",
+    url: "img/cluster/2river.jpg",
+    caption: "river near the pipeline"
 }, {
     lat: 46.42271253466719,
     lng: -100.50979614257814,
@@ -60,49 +60,49 @@ var photos2 = [{
     thumbnail: "img/cluster/2pipeline4.jpg",
     url: "img/cluster/2pipeline4.jpg",
     caption: ""
-}, {
-    lat: 46.40803742275868,
-        lng: -100.68283081054689,
-        thumbnail: "img/cluster/2river.jpg",
-        url: "img/cluster/2river.jpg",
-        caption: ""
 }];
 
 var photos3 = [{
-    lat: 46.4,
-    lng: -100.65,
-    thumbnail: "JVimage/camp1.jpg",
-    url: "JVimage/camp1.jpg",
+    lat:  46.45157783694038,
+    lng: -100.63339233398439,
+    thumbnail: "img/cluster/3camp1.jpg",
+    url: "img/cluster/3camp1.jpg",
+    caption: "environment protector"
+}, {
+    lat: 46.408984323346225,
+    lng: -100.6289291381836,
+    thumbnail: "img/cluster/3flag2.jpg",
+    url: "img/cluster/3flag2.jpg",
     caption: "protest camp"
 }, {
-    lat: 46.42,
-    lng: -100.64,
-    thumbnail: "JVimage/camp2.jpg",
-    url: "JVimage/camp2.jpg",
-    caption: "protest camp"
-}, {
-    lat: 46.45,
-    lng: -100.67,
-    thumbnail: "JVimage/protest1.jpg",
-    url: "JVimage/protest1.jpg",
+    lat: 46.41655893628349,
+    lng: -100.61279296875001,
+    thumbnail: "img/cluster/3kid4.jpg",
+    url: "img/cluster/3kid4.jpg",
     caption: "Protest at Standing Rock"
 }, {
-    lat: 46.44,
-    lng: -100.67,
-    thumbnail: "JVimage/protest2.jpg",
-    url: "JVimage/protest2.jpg",
+    lat:  46.42460580983508,
+    lng: -100.60592651367188,
+    thumbnail: "img/cluster/3people3.jpg",
+    url: "img/cluster/3people3.jpg",
     caption: "Protest at Standing Rock"
 }, {
-    lat: 46.42,
-    lng: -100.66,
-    thumbnail: "JVimage/flag.jpg",
-    url: "JVimage/flag.jpg",
+    lat: 46.45394316729876,
+    lng: -100.64300537109376,
+    thumbnail: "img/cluster/3protest1.jpg",
+    url: "img/cluster/3protest1.jpg",
     caption: "Protest flag"
 }, {
+    lat: 46.424132497207175,
+    lng: -100.59631347656251,
+    thumbnail: "img/cluster/3protest2.jpg",
+    url: "img/cluster/3protest2.jpg",
+    caption: "kid"
+}, {
     lat: 46.42,
     lng: -100.66,
-    thumbnail: "JVimage/kid.jpg",
-    url: "iJVimage/kid.jpg",
+    thumbnail: "img/cluster/3watercheck.jpg",
+    url: "img/cluster/3watercheck.jpg",
     caption: "kid"
 }];
 
