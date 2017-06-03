@@ -574,7 +574,7 @@
             return L.marker(latlng, {bounceOnAdd: true,  opacity: 0.8, bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'fa fa-facebook fa-stack-2x text-primary'})});
         },
         onEachFeature: function (feature, layer) {
-            layer.bindTooltip('<div class="tooltipdiv">' + '<img src="' + feature.properties.headshot + '"/>' + "   " +'<a>'+ feature.properties.user_name + '</a>' + "   " + '<br/>'+ feature.properties.time2 + '<br/>'+ " <br/>" + feature.properties.content + '</div>', {sticky: false, className: "feature-label",permanent: false});
+            layer.bindTooltip('<div class="tooltipdiv redspan">' + '<img src="' + feature.properties.headshot + '"/>' + "   " +'<a>'+ feature.properties.user_name + '</a>' + "   " + '<br/>'+ feature.properties.time2 + '<br/>'+ " <br/>" + feature.properties.content + '</div>', {sticky: false, className: "feature-label",permanent: false});
         }
     });
 
