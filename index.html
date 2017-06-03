@@ -756,9 +756,11 @@
 
 //            L.control.zoom({ position: 'bottomright'}).addTo(map);
 //            stripes.addTo(map);
-            map.on('click', function(e) {
+
+			//test: returen lat lng
+            /*map.on('click', function(e) {
                 alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-            });
+            });*/
 
             // create a mini globe as the overview map control.
             var miniMap = new L.Control.GlobeMiniMap({
