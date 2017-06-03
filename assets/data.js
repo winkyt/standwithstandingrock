@@ -67,43 +67,43 @@ var photos3 = [{
     lng: -100.63339233398439,
     thumbnail: "img/cluster/3camp1.jpg",
     url: "img/cluster/3camp1.jpg",
-    caption: "environment protector"
+    caption: ""
 }, {
     lat: 46.408984323346225,
     lng: -100.6289291381836,
     thumbnail: "img/cluster/3flag2.jpg",
     url: "img/cluster/3flag2.jpg",
-    caption: "protest camp"
+    caption: ""
 }, {
     lat: 46.41655893628349,
     lng: -100.61279296875001,
     thumbnail: "img/cluster/3kid4.jpg",
     url: "img/cluster/3kid4.jpg",
-    caption: "Protest at Standing Rock"
+    caption: ""
 }, {
     lat:  46.42460580983508,
     lng: -100.60592651367188,
     thumbnail: "img/cluster/3people3.jpg",
     url: "img/cluster/3people3.jpg",
-    caption: "Protest at Standing Rock"
+    caption: ""
 }, {
     lat: 46.45394316729876,
     lng: -100.64300537109376,
     thumbnail: "img/cluster/3protest1.jpg",
     url: "img/cluster/3protest1.jpg",
-    caption: "Protest flag"
+    caption: ""
 }, {
     lat: 46.424132497207175,
     lng: -100.59631347656251,
     thumbnail: "img/cluster/3protest2.jpg",
     url: "img/cluster/3protest2.jpg",
-    caption: "kid"
+    caption: ""
 }, {
-    lat: 46.42,
-    lng: -100.66,
+    lat: 46.439276463068964,
+    lng: -100.58258056640625,
     thumbnail: "img/cluster/3watercheck.jpg",
     url: "img/cluster/3watercheck.jpg",
-    caption: "kid"
+    caption: "Environment protectors"
 }];
 
 var fb = {
