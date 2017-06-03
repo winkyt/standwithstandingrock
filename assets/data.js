@@ -45,8 +45,8 @@ var photos2 = [{
 }, {
     lat:  46.43714709713302,
     lng: -100.59288024902345,
-    thumbnail: "img/cluster/2river.jpg",
-    url: "img/cluster/2river.jpg",
+    thumbnail: "img/cluster/3watercheck.jpg",
+    url: "img/cluster/3watercheck.jpg",
     caption: "environment protector"
 }, {
     lat: 46.42271253466719,
@@ -57,9 +57,15 @@ var photos2 = [{
 }, {
     lat: 46.364462225873275,
     lng:  -100.43563842773438,
-    thumbnail: "img/cluster/2constructionsite3.jpg",
-    url: "img/cluster/2constructionsite3.jpg",
+    thumbnail: "img/cluster/2pipeline4.jpg",
+    url: "img/cluster/2pipeline4.jpg",
     caption: ""
+}, {
+    lat: 46.40803742275868,
+        lng: -100.68283081054689,
+        thumbnail: "img/cluster/2river.jpg",
+        url: "img/cluster/2river.jpg",
+        caption: ""
 }];
 
 var photos3 = [{
