@@ -31,47 +31,35 @@ var photos1 = [{
 }];
 
 var photos2 = [{
-    lat: 46.4,
-    lng: -100.8,
-    thumbnail: "JVimage/speech1.jpg",
-    url: "JVimage/speech1.jpg",
-    caption: "protest: speech"
+    lat: 46.50122820195785,
+    lng:  -100.75149536132814,
+    thumbnail: "img/cluster/2pipeline1.jpg",
+    url: "img/cluster/2pipeline1.jpg",
+    caption: ""
 }, {
-    lat: 46.34,
-    lng: -100.4,
-    thumbnail: "JVimage/speech2.jpg",
-    url: "JVimage/speech2.jpg",
-    caption: "protest: speech"
+    lat: 46.46742358874454,
+    lng: -100.68145751953126,
+    thumbnail: "img/cluster/2pipeline2.jpg",
+    url: "img/cluster/2pipeline2.jpg",
+    caption: ""
 }, {
-    lat: 46.31,
-    lng: -100.56,
-    thumbnail: "JVimage/water.jpg",
-    url: "JVimage/water.jpg",
-    caption: "protest: water"
-}, {
-    lat: 46.455,
-    lng: -100.58,
+    lat:  46.43714709713302,
+    lng: -100.59288024902345,
     thumbnail: "img/cluster/2river.jpg",
     url: "img/cluster/2river.jpg",
-    caption: "protest: kid"
+    caption: "environment protector"
 }, {
-    lat: 46.45,
-    lng: -100.67,
-    thumbnail: "JVimage/kid.jpg",
-    url: "JVimage/kid.jpg",
-    caption: "protest: kid"
+    lat: 46.42271253466719,
+    lng: -100.50979614257814,
+    thumbnail: "img/cluster/2pipeline4.jpg",
+    url: "img/cluster/2pipeline4.jpg",
+    caption: ""
 }, {
-    lat: 46.5,
-    lng: -100.68,
-    thumbnail: "JVimage/kid.jpg",
-    url: "JVimage/kid.jpg",
-    caption: "protest: kid"
-}, {
-    lat: 46.42,
-    lng: -100.66,
-    thumbnail: "img/people6.jpg",
-    url: "img/people6.jpg",
-    caption: "protest at Standing Rock"
+    lat: 46.364462225873275,
+    lng:  -100.43563842773438,
+    thumbnail: "img/cluster/2constructionsite3.jpg",
+    url: "img/cluster/2constructionsite3.jpg",
+    caption: ""
 }];
 
 var photos3 = [{
