@@ -539,7 +539,7 @@
             }
         },
         onEachFeature: function (feature, layer) {
-            layer.bindTooltip(feature.properties.camp_nam, {sticky: false, className: "feature-label",permanent: false});
+            layer.bindTooltip('<p><b>' + feature.properties.camp_nam+ '</b></p>', {sticky: false, className: "feature-label",permanent: false, offset: [-10, -145]});
         }
     });
 
@@ -639,7 +639,7 @@
             weight: 0,
 			fillOpacity: 0.5,
             onEachFeature: function (feature, layer) {
-                layer.bindTooltip('river name: ' + feature.properties.NAME, {sticky: true, className: "feature-label",permanent: false, offset: [-10, -145]})
+                layer.bindTooltip('river name: ' + feature.properties.NAME , {sticky: true, className: "feature-label",permanent: false, offset: [-10, -145]})
 
             }
     //opacity: 0.9
@@ -672,10 +672,6 @@
             dashArray: "50 25",
             className: 'pipeline_pattern',
 			opacity: 0.7,
-            onEachFeature: function (feature, layer) {
-                layer.bindTooltip({latlng: latlng});
-            }
-
         })
         ],
 
@@ -771,6 +767,9 @@
 
 //            L.control.zoom({ position: 'bottomright'}).addTo(map);
 //            stripes.addTo(map);
+            map.on('click', function(e) {
+                alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+            });
 
             // create a mini globe as the overview map control.
             var miniMap = new L.Control.GlobeMiniMap({
