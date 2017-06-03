@@ -51,8 +51,8 @@ var photos2 = [{
 }, {
     lat: 46.42271253466719,
     lng: -100.50979614257814,
-    thumbnail: "img/cluster/2pipeline4.jpg",
-    url: "img/cluster/2pipeline4.jpg",
+    thumbnail: "img/cluster/2pipeline3.jpg",
+    url: "img/cluster/2pipeline3.jpg",
     caption: ""
 }, {
     lat: 46.364462225873275,
