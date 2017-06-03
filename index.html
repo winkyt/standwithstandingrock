@@ -263,13 +263,14 @@
 			</section>
 			<section data-scene="map_hex_case1">
 				<h3>Spoofing Check-ins:<br/>what are they posting?</h3>
-				<p><strong>Hover</strong> on the Facebook icon and see <br/>interesting posts</p>
+				<p><strong>Hover</strong> on the Facebook icon and see <br/>interesting posts.</p>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 			</section>
 			<section data-scene="map_hex_case2">
 				<h3>U.S. Spoofing Check-in:<br/>Hex map</h3>
-				<p>Q1: Where were they?<br/>Q2: What were they poting?
+                <p>We search the Facebook posts about answering the call of fake check-in @Standing Rock, and got <b>over 1 thousand </b>posts. After crawling down the related data, we found out the real location of users while they did the post. </p><br/><br/>
+				<p>Q1: Where were they in real?<br/>Q2: What were they poting?
                     <!--A: EVERYWHERE.-->
                 </p>
 				<br/><br/>
@@ -702,46 +703,11 @@
             minZoom: 0,
             maxZoom: 16
         })],
-        'Esri_WorldShadedRelief' : [L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri',
-            maxZoom: 13
-        })],
-        'Esri_WorldGrayCanvas' : [ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copylogo.png; Esri &mdash; Esri, DeLorme, NAVTEQ',
-            maxZoom: 16
-        })],
-
-        'Hydda_Full' : [L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        })],
-
-        'Esri_NatGeoWorldMap' : [ L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
-            maxZoom: 16
-        })],
-
         'Esri_WorldPhysical' : [L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
             maxZoom: 8
         })],
-        'Hydda_RoadsAndLabels' : [ L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        })],
-        'OpenMapSurfer_Roads' : [L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
-            maxZoom: 20,
-            attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        })],
-        'Stamen_TonerLabels' : [L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            subdomains: 'abcd',
-            minZoom: 0,
-            maxZoom: 20,
-            ext: 'png'
-        })],
         'CartoDB_Positron' : [ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png')],
-        'CartoDB_DarkMatter' : [L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}@2x.png')],
         'PhotoLayers1': [photoLayer1],
         'PhotoLayers2': [photoLayer2],
         'PhotoLayers3': [photoLayer3],

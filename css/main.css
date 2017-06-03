@@ -175,7 +175,7 @@ p{
 .p_end{
     font-size:35px;
     color: white;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 0 7px black;
     margin-left: 5%;
     /*margin-right: 40%;*/
     text-align:justify;
@@ -261,7 +261,9 @@ p{
     margin-top: 30px
 }
 .text-primary {
-    color: #006080;
+    /*color: #006080;*/
+    color: #4166ff;
+    opacity: 0.8;
 }
 
 .axis path,
@@ -277,8 +279,9 @@ p{
 
 .line {
     fill: none;
-    stroke: #006080;
+    stroke: #4166ff;
     stroke-width: 5px;
+    opacity: 0.8;
 }
 
 
@@ -304,7 +307,7 @@ p{
     width:200px;
     font-size:13px;
     background-color: transparent;
-    opacity: 0.9
+    opacity: 0.7
 }
 
 .sr-label1:before{
@@ -323,7 +326,7 @@ p{
     width:200px;
     font-size:20px;
     background-color: transparent;
-    opacity: 0.9
+    opacity: 0.7
 }
 
 .sr-label:before{
@@ -350,9 +353,10 @@ p{
 }
 
 .marker-icon {
-    color: #006080;
+    color: #4166ff;
     font-size: 53px;
     text-shadow: 0 0 2px #ffffff;
+    opacity: 0.7
 }
 
 .checkin-label {
