@@ -190,7 +190,7 @@
 				<p>The pipeline is is designed to transport as many as 570,000 barrels of crude oil daily from North Dakota to Illinois. The pipeline would be a key conduit connecting oil wells in the state's Bakken Shale, where the development of fracking has opened billions of gallons of new oil to recovery, to other valuable consumer markets, including the Gulf Coast, Midwest and East Coast. The nearly $4 billion project was first proposed in 2014 with an anticipated completion of this year.</p>
 				<div class="legend legend-custom">
 					<i style="background: #ABD1E8;"></i><p>Aquifer</p><br/>
-					<i style="background: #006080;"></i><p>River</p><br/>
+					<i style="background: #006080; opacity: 0.5"></i><p>River</p><br/>
 					<i style="background: orange"></i><p>Reservation Land</p><br/>
 					<i style="background: #B51E1E;"></i><p>Pipeline</p><br/>
 				</div>
@@ -208,7 +208,7 @@
 					<i class="glyphicon glyphicon-tent camp-icon-3 point-legend"></i><p> <b>The Frontline Camp</b> was erected in path of the Dakota Access Pipeline. </p> <br/>
 
 					<i style="background: #ABD1E8;"></i><p>Aquifer</p><br/>
-					<i style="background: #006080;"></i><p>River</p><br/>
+					<i style="background: #006080; opacity: 0.5"></i><p>River</p><br/>
 					<i style="background: orange"></i><p>Reservation Land</p><br/>
 					<i style="background: #B51E1E;"></i><p>Pipeline</p><br/>
 				</div>
@@ -615,7 +615,7 @@
             // create a map in the "map" div, set the view to a given place and zoom
             var map = L.map('map', {zoomControl: false, dragging: false, scrollWheelZoom: false,maxZoom: 14}).setView([44.1347254, -122.7411479], 7);
             map.doubleClickZoom.disable();
-			
+
             miniMap = new L.Control.GlobeMiniMap({
                 marker:'#B51E1E',
                 position: 'bottomright'
