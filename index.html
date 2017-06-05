@@ -225,7 +225,7 @@
 			</section>
 			<section data-scene="map_hex_case1">
 				<h3>Why Spoofing?</h3>
-				<p> Why did Facebook users spoof their check-ins? Hover on the Facebook icon to get some clues.</p>
+				<p> Why did Facebook users spoof their check-ins? <br/>Hover on the Facebook icon to get some clues.</p>
 			</section>
 			<section data-scene="map_hex_case2">
 				<p>To understand the context of spoofed check-ins at Standing Rock, we crawled 1,858 spoofed check-ins. The word cloud illustrates all the relevant topics around the keyword "Standing Rock", and the map shows the spatial distribution of all spoofed check-ins.
@@ -282,7 +282,7 @@
 					<p><b>Photos</b></p><br>
 					<p><a href="https://www.jenniferveilleux.com/">Dr.Jennifer Veilleux</a> | Florida International University</p><br/>
 
-					<p><b>Graphic Data</b></p><br> 
+					<p><b>Graphic Data</b></p><br>
 					<p><a href="https://trends.google.com/trends/explore?q=standing%20rock">Google Trends</a></p><br/><br/>
 
 					<p><b>Authors: </b></br>
@@ -614,7 +614,8 @@
         createMap: function () {
             // create a map in the "map" div, set the view to a given place and zoom
             var map = L.map('map', {zoomControl: false, dragging: false, scrollWheelZoom: false,maxZoom: 14}).setView([44.1347254, -122.7411479], 7);
-
+            map.doubleClickZoom.disable();
+			
             miniMap = new L.Control.GlobeMiniMap({
                 marker:'#B51E1E',
                 position: 'bottomright'
