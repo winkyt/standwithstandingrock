@@ -8,14 +8,14 @@ Due to the fierce local conflict triggered by the proposed pipeline, environment
 
 ///////////////////////////////////////////////////////////////////////////
 
-Project Summary:
+**Project Summary**
  
-Introduction: 
+## 1. Introduction: 
 Following months of conflict, triggered by a proposed pipeline, in January 2017, environmental protestors were forced to leave their camping area at Standing Rock. Today, it has become nearly impossible for people to access the former camping area. Even though protestors no longer stay there, a growing number of social media users still stand with #StandingRock by spoofing their check-ins on Facebook. With storymap techniques, this dynamic map geo-narrates the whole story of the environmental protest at Standing Rock and #standing rock.
  
 Team Members:  Yingqi Tang, and Yuanyuan, Tian 
  
-Background:
+## 2. Background:
  
 Dakota Access Pipeline(DAPL) is an underground pipeline project, crossing states of North Dakota, South Dakota, Iowa, and Illinois. It is designed to transport as many as 570,000 barrels of crude oil daily. The purpose of this project is relevant to the issue of energy security in the United States. The pipeline passes through the Lake Oahe near the Standing Rock Indian Reservation. 
  
@@ -27,7 +27,7 @@ Early on October 31, 2016, a Facebook post said that the Morton County sheriff's
  
 The purpose of this dynamic story map project is to show spoofing check-ins on Facebook related to the Dakota Access Pipeline Protest(#NoDAPL)  in Standing Rock recreation area, and how people use social media to speak up for themselves or show their supports. 
  
-Methodology:
+## 3. Methodology:
 This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). (Facebook data)2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.  
  
 1.
@@ -40,7 +40,7 @@ Most data are in national scale. To reduce the size file, we use the clip tool t
  
  
  
-Tutorial:
+## 4. Tutorial:
 1.This is a navigation bar. It includes all subjects of this web map. The check-in bottom contains three sub-subjects. You can click on the subject, and jump to a specific page. 
 2.These four icons connect to about page and three external links. The first one from the left is the about page button. The second one (with Facebook symbol) and the third one(with Twitter symbol) allow you to share this website on your face, and the last one is a button to direct you Github page, where you can find the code and data of this page. 
 3.A drop down arrow to help you go to the next page
@@ -53,13 +53,13 @@ Tutorial:
 
 
  
-Result:
+## 5. Result:
 The usage of geolocation based social media is not only concentrate on personal interests. Through the case studying of standing rock, it shows that people could use this function to show their supports on a specific events. From the Facebook Check-in page, 337,589 people check in to the topic of standing rock. According to Google Trends, the search volume of term “ standing rock” peaked at the end of 2016. 
  
  
-Reflection on this project:
+## 6. Reflection on this project:
  
-Credits:
+Credits: Bo, Z., Yuanyuan, T., Yingqi, T.  (2017) standing rock storymap.
  
 Acknowledgement:
 We would like to thank Dr.Bo Zhao for comments, assistance, and editorial advice.
