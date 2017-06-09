@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Stand with #StandingRock" />
 	<meta property="og:url" content="https://winkyt.github.io/standwithstandingrock" />
-	<meta property="og:image" content="https://winkyt.github.io/standwithstandingrock/img/screen.png" />
+	<meta property="og:image" content="img/screen.png" />
 	<meta property="og:description" content="The Dakota Access Pipeline Protest(#NoDAPL) began in early 2016 in reaction to the approved construction of Energy Transfer Partners' Dakota Access Pipeline in the northern United States. The pipeline pass through the Lake Oahe near the Standing Rock Indian Reservation. Early in October 31 2016, a Facebook post said that the Morton County sheriff’s department was using Facebook check-ins to target people at the protest camp. People answered the call on Facebook to ‘overwhelm and confuse’ law enforcement officials, although police denied tracking activists on social media." />
 	<!--stylesheets-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -190,7 +190,34 @@
 
 			<section data-scene="map_pipeline">
 				<h3>The Proposed Pipeline</h3>
-				<p>The pipeline is is designed to transport as many as 570,000 barrels of crude oil daily from North Dakota to Illinois. The pipeline would be a key conduit connecting oil wells in the state's Bakken Shale, where the development of fracking has opened billions of gallons of new oil to recovery, to other valuable consumer markets, including the Gulf Coast, Midwest and East Coast. The nearly $4 billion project was first proposed in 2014 with an anticipated completion of this year.</p>
+				<!--<p>The pipeline is is designed to transport as many as 570,000 barrels of crude oil daily from North Dakota to Illinois. The pipeline would be a key conduit connecting oil wells in the state's Bakken Shale, where the development of fracking has opened billions of gallons of new oil to recovery, to other valuable consumer markets, including the Gulf Coast, Midwest and East Coast. The nearly $4 billion project was first proposed in 2014 with an anticipated completion of this year.</p>-->
+				<p>The pipeline is to be built by Texas-based Energy Transfer Partners and is designed to transport as many
+
+					as 570,000 barrels of crude oil daily from North Dakota to Illinois. This Pipeline has drawn parallels to
+
+					the Keystone XL pipeline. Opposition to that project, which Obama eventually rejected, became a litmus
+
+					test in the eyes of some activists for public officials to show their commitment to addressing
+
+					environmental issues. But at the same time significant differences remain. Perhaps most importantly,
+
+					Keystone crossed into Canada, making it an international issue that gave authority over its final approval
+
+					to the State Department. The federal government has the authority over the Dakota Access Pipeline
+
+					because it crosses interstate waterways. Stopping the project would be challenging for any administration.<br/><br/>
+
+					The protest was caused by issues related to the protection of water, land, and religious/spiritual sites
+
+					sacred to indigenous peoples of the Americas. Despite the U.S. Army Corps of Engineers claim that the
+
+					pipeline will not cross the Standing Rock area, people still worry that a leak from the pipeline could
+
+					contaminate local water sources and damage local agriculture. We must ask: which is more important,
+
+					water and food security, or energy security?
+				</p>
+
 				<div class="legend legend-custom">
 					<i style="background: #ABD1E8;"></i><p>Aquifer</p><br/>
 					<i style="background: #006080; opacity: 0.5"></i><p>River</p><br/>
@@ -202,6 +229,13 @@
 
 			<section data-scene="map_camp">
 				<h3>Protest Camp</h3>
+				<p>In April, Standing Rock Sioux elder LaDonna Brave Bull Allard established Sacred Stone camp as a
+
+					center for cultural preservation and spiritual resistance to the pipeline. Over the summer the camp
+
+					grew to thousands of people. Later, two more camps were established at the area. People gathered
+
+					at the camps to show their support.</p>
 				<div class="legend legend-custom">
 
 					<i class="glyphicon glyphicon-tent camp-icon-2 point-legend"></i> <p> <b>The Sacred Stone Camp</b> was erected since April 2016 and grew dramatically in its scape. It has played a major role in protecting the site.</p> <br/>
@@ -637,6 +671,11 @@
             // create a map in the "map" div, set the view to a given place and zoom
             var map = L.map('map', {zoomControl: false, dragging: false, scrollWheelZoom: false,maxZoom: 14}).setView([44.1347254, -122.7411479], 7);
             map.doubleClickZoom.disable();
+
+            //test: returen lat lng
+			/*map.on('click', function(e) {
+			 alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+			 });*/
 
             miniMap = new L.Control.GlobeMiniMap({
                 marker:'#B51E1E',

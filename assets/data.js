@@ -5,8 +5,8 @@ var photos1 = [{
     url: "img/cluster/1Indian1.jpg",
     caption: "Sioux Indians"
 }, {
-    lat: 46.3,
-    lng: -100.7,
+    lat: 45.54483149242463,
+    lng: -101.86523437500001,
     thumbnail: "img/cluster/1Indian2.jpg",
     url: "img/cluster/1Indian2.jpg",
     caption: "Native American at Standing Rock"
