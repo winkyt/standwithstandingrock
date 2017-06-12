@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="icon" href="img/favicon.ico" width="16" height="16" type="image/x-icon"/>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Sea Level Rise Migration Project</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <!--favicon-->
+    <link rel="icon" href="img/favicon.ico" width="16" height="16" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- MapboxGL CSS -->
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel='stylesheet' />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--d3-->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!--Google Fonts-->
+    <!--Leaflet Javascript -->
+    <!--<script src="https://cdn.leafletjs.com/leaflet/v1.0.3/leaflet.js"></script>-->
+    <!--MapboxGL Javascript-->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script>
+    <!--Leaflet Mapbox Javascript-->
+    <script src="https://rawgit.com/mapbox/mapbox-gl-leaflet/master/leaflet-mapbox-gl.js"></script>
+    <script src="https://ivansanchez.gitlab.io/Leaflet.TileLayer.GL/src/Leaflet.TileLayer.GL.js"></script>
+
+
+    <!--Bootstrap Javascript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script src="js/spatialsankey-custom.js"></script>-->
+    <style> h2 {
+        padding-bottom: 20px
+    }
+    </style>
+</head>
+
+<body>
+<!--Facebook sharing-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--Build Bootstrap Navbar-->
+<div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <!--<a class="navbar-brand logo"  href="index.html"> <img alt="Home Page" width="18%" src="img/SLR-icon-words-trans.png"></a>-->
+                <a class="navbar-brand logo"  href="index.html"> <img alt="Home Page" height="130%" src="img/favicon.ico"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown-toggle">
+                        <a style="color: black; font-size: x-large; left: -16px" href="index.html"><b>Understanding location spoofing: a case study of  Facebook Check-ins for Standing Rock</b></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--Migration Map-->
+                    <li class="dropdown-toggle">
+                        <a style="color: black" href="index.html">Story Map</a>
+                    </li>
+                    <!--About Page-->
+                    <li class="dropdown-toggle">
+                        <a style="color: black" href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="fa fa-facebook-square social" href="https://facebook.com/sharer.php?u=https://winkyt.github.io/standwithstandingrock" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a class="fa fa-twitter-square social" href="https://twitter.com/home?status=Location%20Spoofing%20at%20StandingRock%0Ahttps://winkyt.github.io/standwithstandingrock" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a class="fa fa-github-square social2"  href="https://github.com/winkyt/standwithstandingrock" target="_blank"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <br><br><h1 class="page-header"></h1>
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li class="active">About</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    <!-- Intro Content -->
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="h2_about">Project Summary</h2>
+            <p style="text-align:justify">
+                Following months of conflict, triggered by a proposed pipeline, in January 2017, environmental protestors were forced to leave their camping area at Standing Rock. Today, it has become nearly impossible for people to access the former camping area. Even though protestors no longer stay there, a growing number of social media users still stand with #StandingRock by spoofing their check-ins on Facebook. With storymap techniques, this dynamic map geo-narrates the whole story of the environmental protest at Standing Rock and #standing rock.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="image" style="padding-top: 22px">
+                <img class="img-responsive" src="img/people9.jpg" alt="">
+                <div><i>Opponents of the Dakota Access Pipeline in October 2016. Photo by Rob Wilson.</i></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h2 class="h2_about">Background</h2>
+    <p style="text-align:justify">
+        &nbsp &nbsp Dakota Access Pipeline(DAPL) is an underground pipeline project, crossing states of North Dakota, South Dakota, Iowa, and Illinois. It is designed to transport as many as 570,000 barrels of crude oil daily. The purpose of this project is relevant to the issue of energy security in the United States. The pipeline passes through the Lake Oahe near the Standing Rock Indian Reservation.<br>
+    </p>
+    <p style="text-align:justify">
+        &nbsp &nbsp Members of the Standing Rock Sioux Tribe and some environmental supporters protested the project daily around the construction site. Even though the pipeline's developers claim that the pipeline is safe for the environment, the opposers say the environmental risks, especially water issue, are too great for it to move forward. They also compare the DAPL with the scrapped Keystone XL pipeline. Meanwhile, opposers concern that the pipeline will disturb historical and religious sites((2016).<br>
+    </p>
+    <p style="text-align:justify">
+        &nbsp &nbsp Tensions between the pipeline developers and opponents developed since April 2016. Standing Rock Sioux elder LaDonna Brave Bull Allard established Sacred Stone camp as a center for the cultural preservation and spiritual resistance to the pipeline. Over the summer the camp grew to thousands of people. Later, two more camps were established in the area. People gathered at the campsites to show their support.<br>
+    </p>
+    <p style="text-align:justify">
+        &nbsp &nbsp Early on October 31, 2016, a Facebook post said that the Morton County sheriff's department was using Facebook check-ins to target people at the protest camps (CNN 2017).  People outside of the protests camp checked-in to Facebook to ‘overwhelm and confuse' law enforcement officials, although police denied tracking activists on social media (CNN 2017; States News Service 2017; Uwire 2016). The Check-in feature allows users to add their current or nearby location to posts on Facebook. However, people can falsify their location check-ins, which is known as location spoofing. Later, more and more people checked-in to the Facebook to keep an eye on the event.<br>
+    </p>
+    <p style="text-align:justify">
+        &nbsp &nbsp The purpose of this dynamic story map project is to show spoofing check-ins on Facebook related to the Dakota Access Pipeline Protest(#NoDAPL) in Standing Rock recreation area, and how people use social media to speak up for themselves or show their supports.<br>
+    </p>
+<!--    <p style="text-align:justify">
+        A 2016 study by Dr. Mathew Hauer, at the University of Georgia, showed that 1.8 meters of sea level rise
+        could displace an estimated 13.1 million people by 2100, living in 319 counties along the American
+        coastline [1]. This study improved on previous estimates by accounting for population growth trends in
+        America. However, the question remained, “Where will SLR-affected migrants go, and how will this effect
+        the rest of the country?”
+    </p>
+    <p style="text-align: justify">
+        To answer this question, Hauer (2017) integrated his 2016 findings with a migration systems analysis to estimate
+        where SLR-displaced migrants would move, on a county-to-county scale, and how their migration could dramatically
+        alter the American population distribution.
+    </p>-->
+    <div class="image" style="padding-top: 22px">
+        <img class="img-responsive" src="img/about_1.png" alt="">
+        <div align="center"><i>Example of a Facebook post about Standing Rock Check-ins.</i></div>
+    </div>
+    
+    <!--Methodology content-->
+    <h2 class="h2_about">Methodology</h2>
+    <p style="...; text-align: justify">
+        This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). (Facebook data)2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.<br>
+    </p>
+    <p style="...; text-align: justify">
+        <strong>1. Crawling</strong><br>
+        We use Python to write a program helping us crawling down the data automatically. The functions of this program include 1). Open a browser 2).Go to Facebook, 3). Search "Standing Rock call check-in,” 4).Scroll down automatically, and set 5 seconds to wait for a response and cache per scroll,  5).Until the end of scrolling, start crawling down the post and other information like username, and store these data in a database, and 6).pick up the categories which are useful, then transform the data into a .js file.<br>
+    </p>
+    <p style="...; text-align: justify">
+        <strong>2. QGIS</strong><br>
+        Most data are in national scale. To reduce the size file, we use the clip tool to select aquifer, river, and reservation area. Also, we will QGIS to transfer all shapefile data into a geo JSON file so that the data can be inserted into the web page.<br>
+    </p>
+    <p style="...; text-align: justify">
+        <strong>3. Design and Program</strong><br>
+        &nbsp &nbsp •    Storymap:  Storymap is the core frame of this website. This storymap are organically made up by several scenes: Home, Info, StandingRock, Pipeline, Camps, Check-in, Spoofed Check-ins, Why Spoofing?, and Spatial and Semantic Explore. For each scene, there are a panel and a map. We put context in the main panel part and use a map consists of basemap, thematic layers and interactive features to help, illustrating the setting.<br>
+        &nbsp &nbsp •    Leaflet: Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. We use this to support the map part.<br>
+        &nbsp &nbsp •    Bootstrap: framework of the Info scene. helps to line up the icons and text.<br>
+        &nbsp &nbsp •    Markercluster Photo (for scenes StandingRock, Pipeline and Camps): use this method to show geo-tagged photos. photos are shown on the map as clusters of thumbnails, and hovering on each thumbnail would open the image in the left panel.<br>
+        &nbsp &nbsp •    d3 trendline (for scene Info): use it to draw the trend line of Google Trend data, csv file.<br>
+        &nbsp &nbsp •    Hexbin: use the hexbin to visualize Facebook posts instead of traditional scatter points, helping people understand the post count in one area better.<br>
+        &nbsp &nbsp •    color design:1). use palettr to search the thematic color of tribe, oil, water, etc. 2).use colorbrewer to adapt the wordcloud color.<br>
+        &nbsp &nbsp •    wordcloud: to show what people were talking about. It use JS library to analyze the post content we crawling down from Facebook.<br>
+        &nbsp &nbsp •    globe minimap: show in the right down corner about where the map scene located on earth.<br>
+        &nbsp &nbsp •    Illustrator: Adobe software helping us to design the favicon.<br>
+        &nbsp &nbsp •    Font Awesome icons: for the Info scene, we use font awesome icons: location, user, male, and Facebook.<br>
+        &nbsp &nbsp •    Google Fonts: Use Google Fonts to define the text fonts(both paragraph and map label).<br>
+    </p>
+
+    <!--Tutorial-->
+    <h2 class="h2_about">Tutorial</h2>
+    <p style="text-align: justify">
+        <b>1)</b> This is a navigation bar. It includes all subjects of this web map. The check-in bottom contains three sub-subjects. You can click on the subject, and jump to a particular page.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>2)</b> These four icons connect to about page and three external links. The first one from the left is the about page button. The second one (with Facebook symbol) and the third one(with Twitter logo) allow you to share this website on your face, and the last one is a button to direct you Github page, where you can find the code and data of this page.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>3)</b> A drop down arrow to help you go to the next page.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>4)</b> A process bar to help you know where you are.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>5)</b> It is a click-on feature. Move the mouse to the picture; it will show you a larger size on the left panel.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>6)</b> " next page" button go to the left corner but still serves the same function as step 3.<br>
+    </p>
+    <p style="text-align: justify">
+        <b>7)</b> Check what people said about the standing rock event, move the mouse to the icon "F" at the page of check-in.<br>
+    </p>
+
+    <img src="img/tutorial_1.jpg" height="500" width="800" class="img-responsive" style="padding-top: 20px; padding-bottom: 10px; margin: auto"/>
+    <img src="img/tutorial_2.jpg" height="500" width="800" class="img-responsive" style="padding-top: 20px; padding-bottom: 10px; margin: auto"/>
+    <img src="img/tutorial_3.jpg" height="500" width="800" class="img-responsive" style="padding-top: 20px; padding-bottom: 10px; margin: auto"/>
+
+
+    <div style="text-align: center"><i>Tutorial of project functions.</i></div>
+    </p>
+    <br>
+
+    <!--Result-->
+    <h2 class="h2_about">Result</h2>
+    <p style="...; text-align: justify">
+        The usage of geolocation-based social media not only concentrate on personal interests. Through the case studying of standing rock, it shows that people could use this function to show their supports for specific events. From the Facebook Check-in page, 337,589 people check-ins to the site of standing rock. According to Google Trends, the search volume of term “standing rock” peaked at the end of 2016. Though the official map made by the company says the pipeline does not cross any land belonging to the Standing Rock Sioux, you can tell from our map that there are aquifer and lakes near the pipeline. The oil leak may infect the environment like the water and soil after some time, that is why it is important to buffer area when constructing such kind of infrastructure (States News Service 2017).<br>    </p>
+    <p style="...; text-align: justify">
+        Nearly two thousand users’ data downloaded from the Crawling(Method1).  The hex bin map shows the distribution of users from our database. Darker color indicates a greater number of users who answered the call from Facebook location check-in. The place of standing rock protest camps has the highest number on the Facebook page. The main cities in the United States, such as Los Angeles, New York City, San Francisco, and Seattle have a relatively large number of users who participate in this online “Check-In” event. This result was expected because people at the urban area show more interest in environmental issues. Also, urban population tends to have a larger quantity than the rural area. The Urban population may spend more time on social media so that they can access to the information within a short notice ((Murthy, Gross, and Pensavalle 2015). Meanwhile, more people at the coastal area answered to the check-in. We expected individuals in the vicinity or affected by the pipeline may show more interests or supports for the event of standing rock. However, no significant amount of posts was found in the States of North Dakota, South Dakota, Iowa, and Illinois. This project focuses on the users from the United States. However, through the Crawling data, we found that people from other countries, such as Australia, Canada, China, England, and France, also check-in to Facebook.<br>
+    </p>
+
+    <!--Reflection-->
+    <h2 class="h2_about">Reflection on this project</h2>
+    <p style="...; text-align: justify">
+        The project provides an excellent opportunity to learn different types of web-mapping skills and to work with people. Although we have limited experience in web coding when the project started, we used GitHub materials to study some basic idea and codes of web-mapping. Also, we consulted with the advisors and other people when we had the difficulty. The standing stock event is a good example to explain the idea of location spoofing, but, to present the whole event, and why people use Facebook Check-ins, political information may include. To reduce the possibility of showing personal opinion on this project, we spent some time to word each section. The quantity of Facebook “check-in” data is enormous, so we randomly selected 1858 sources for this project.  GitHub, USGS, and US Census TIGER product were the source for our geospatial data. Overall, through this project, we identify the issue and share the events with audiences. Also, we present the concept of location spoofing through the Facebook check in for standing rock protest. In the future, the project will continue and understand how people use other social media to speak for their concerns of policies and projects, and share their supports. <br>
+    </p>
+
+
+
+
+
+<hr>
+    <!-- Team Members -->
+    <a name="team" style=""></a>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2_about">Our Team</h2>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="img/yt1.jpg" alt="">
+                <div class="caption">
+                    <br><br><br><h3>Yingqi Tang<br>
+                        <small>M.S. - Geography</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="img/Tyy.jpg" alt="">
+                <div class="caption">
+                    <br><br><br><h3>Yuanyuan Tian<br>
+                        <small>M.S. - Geospatial Science</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="img/bo.jpg" alt="">
+                <div class="caption">
+                    <br><br><br><h3>Dr. Bo Zhao<br>
+                        <small>Faculty Advisor</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <h2 class="h2_about">Credits</h2>
+                <p style="text-align:justify">
+                    &nbsp &nbsp •	Geographic Data: <br>
+                    &nbsp &nbsp &nbsp &nbsp 1). standing rock area, local camps, and Dakota Access Pipeline from nittyjee. Github 2). Aquifer and river from USGS.<br>
+                    &nbsp &nbsp •	Context: Argus Leader, CNN, Democracy Now, The Washington Post, The Guardian, Stand with Standing Rock, and Wikipedia.<br>
+                    &nbsp &nbsp •	Photos: Dr. Jennifer Veilleux from Florida International University, Online sources: curlyhorses.com, ndstudies.org, time.com, inhabitat.com, bakkenoilreport.com, and hot975fm.com<br>
+                    &nbsp &nbsp •	Graphic data: Google Trends<br>
+                </p>
+                <h2 class="h2_about">Acknowledgement</h2>
+                <p style="text-align:justify">
+                    We would like to thank Dr.Bo Zhao for comments, assistance, and editorial advice.<br>
+                </p>
+                <h2 class="h2_about">References</h2>
+                <p>
+                    [1] Hertsgaard, Mark, 2016. “Standing Like a Rock,” The Nation, September, 1–4. Accessed 10 June 2017<br>
+                    [2] Murthy, Dhiraj, Alexander Gross, and Alexander Pensavalle. 2015. “Urban Social Media Demographics: an Exploration of Twitter Use in Major American Cities.” Journal of Computer-Mediated Communication 21 (1): 33–49. doi:10.1111/jcc4.12144.
+                    [3] "OIL AND WATER DON'T MIX: WHY THE ACLU IS STANDING UP FOR THE STANDING ROCK SIOUX TRIBE." States News Service, 24 Feb. 2017. Academic OneFile. Accessed 10 June 2017.<a href="https://doi.org/10.1038/NCLIMATE3271"><u>go.galegroup.com/ps/i.do?p=AONE&sw=w&u=s8405248&v=2.1&id=GALE%7CA482663918&it=r&asid=5d2412d9fa3489e0b397a61cce2fa67d</u></a><br>
+                    [4] "Solidarity with Standing Rock." UWIRE Text, 7 Nov. 2016, p. 1. Academic OneFile. Accessed 10 June 2017.<a href="go.galegroup.com/ps/i.do?p=AONE&sw=w&u=s8405248&v=2.1&id=GALE%7CA469248020&it=r&asid=c6ccdefeb9d0c3713a88b47cabe3f30b"><u>go.galegroup.com/ps/i.do?p=AONE&sw=w&u=s8405248&v=2.1&id=GALE%7CA482663918&it=r&asid=5d2412d9fa3489e0b397a61cce2fa67d</u></a><br>
+                    [5] "Why your Facebook friends are checking in at Standing Rock." CNN Wire 31 Oct. 2016. Business Insights: Global. Web. 10 June 2017.<a href="http://bi.galegroup.com.ezproxy.proxy.library.oregonstate.edu/global/article/GALE%7CA468526751/a696574b0befab3043b501cf771e1125?u=s8405248"><u>http://bi.galegroup.com.ezproxy.proxy.library.oregonstate.edu/global/article/GALE%7CA468526751/a696574b0befab3043b501cf771e1125?u=s8405248</u></a><br>
+                    [6] "Why you should 'check-in' to Standing Rock." UWIRE Text, 9 Nov. 2016, p. 1. Academic OneFile <a href="go.galegroup.com/ps/i.do?p=AONE&sw=w&u=s8405248&v=2.1&id=GALE%7CA469440918&it=r&asid=def2385e5cd518fc95ff5a6c6d1c84f0"><u>go.galegroup.com/ps/i.do?p=AONE&sw=w&u=s8405248&v=2.1&id=GALE%7CA469440918&it=r&asid=def2385e5cd518fc95ff5a6c6d1c84f0</u></a><br>
+
+
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+
+</html>
