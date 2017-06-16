@@ -30,7 +30,7 @@ The purpose of this dynamic story map project is to show spoofing check-ins on F
 ## 3. Methodology:
 This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). Facebook data 2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.  
  
-1.Crawling
+### 1.Crawling
 
 We use Python to write a program helping us crawling down the data automatically. The functions of this program include 1). Open a browser 2).Go to Facebook, 3). Search "Standing Rock call check-in,” 4).Scroll down automatically, and set 5 seconds to wait for a response and cache per scroll, 5).Until the end of scrolling, start crawling down the post and other information like username, and store these data in a database, and 6).pick up the categories which are useful, then transform the data into a .js file.
  
