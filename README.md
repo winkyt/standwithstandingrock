@@ -10,22 +10,21 @@ Due to the fierce local conflict triggered by the proposed pipeline, environment
 
 **Project Summary**
  
-## 1. Introduction: 
+## 1. Project Summary 
 Following months of conflict, triggered by a proposed pipeline, in January 2017, environmental protestors were forced to leave their camping area at Standing Rock. Today, it has become nearly impossible for people to access the former camping area. Even though protestors no longer stay there, a growing number of social media users still stand with #StandingRock by spoofing their check-ins on Facebook. With storymap techniques, this dynamic map geo-narrates the whole story of the environmental protest at Standing Rock and #standing rock.
  
 Team Members:  Yingqi Tang, and Yuanyuan, Tian 
  
-## 2. Background:
+## 2. Background
  
-Dakota Access Pipeline(DAPL) is an underground pipeline project, crossing states of North Dakota, South Dakota, Iowa, and Illinois. It is designed to transport as many as 570,000 barrels of crude oil daily. The purpose of this project is relevant to the issue of energy security in the United States. The pipeline passes through the Lake Oahe near the Standing Rock Indian Reservation. 
- 
-Members of the Standing Rock Sioux Tribe and some environmental supporters protested the project daily around the construction site. Even though the pipeline's developers claim that the pipeline is safe for the environment, the opposers say the environmental risks, especially water issue, are too great for it to move forward. They also compare the DAPL with the scrapped Keystone XL pipeline. Meanwhile, opposers concern that the pipeline will disturb historical and religious sites. 
- 
-Tensions between the pipeline developers and opponents developed since April 2016. Standing Rock Sioux elder LaDonna Brave Bull Allard established Sacred Stone camp as a center for cultural preservation and spiritual resistance to the pipeline. Over the summer the camp grew to thousands of people. Later, two more camps were established in the area. People gathered at the camps to show their support.  
- 
-Early on October 31, 2016, a Facebook post said that the Morton County sheriff's department was using Facebook check-ins to target people at the protest camps. People outside of the protests camp checked-in to Facebook to ‘overwhelm and confuse' law enforcement officials, although police denied tracking activists on social media. The Check-in feature allows users to add their current or nearby location to posts on Facebook. However, people can falsify their location check-ins, which is known as location spoofing. Later, more and more people checked-in to the Facebook to keep an eye on the event. 
- 
-The purpose of this dynamic story map project is to show spoofing check-ins on Facebook related to the Dakota Access Pipeline Protest(#NoDAPL)  in Standing Rock recreation area, and how people use social media to speak up for themselves or show their supports. 
+  Dakota Access Pipeline(DAPL) is an underground pipeline project, crossing states of North Dakota, South Dakota, Iowa, and Illinois. It is designed to transport as many as 570,000 barrels of crude oil daily. The purpose of this project is relevant to the issue of energy security in the United States. The pipeline passes through the Lake Oahe near the Standing Rock Indian Reservation.
+  
+    Members of the Standing Rock Sioux Tribe and some environmental supporters protested the project daily around the construction site. Even though the pipeline's developers claim that the pipeline is safe for the environment, the opposers say the environmental risks, especially water issue, are too great for it to move forward. They also compare the DAPL with the scrapped Keystone XL pipeline. Meanwhile, opposers concern that the pipeline will disturb historical and religious sites((2016).
+    
+    Tensions between the pipeline developers and opponents developed since April 2016. Standing Rock Sioux elder LaDonna Brave Bull Allard established Sacred Stone camp as a center for the cultural preservation and spiritual resistance to the pipeline. Over the summer the camp grew to thousands of people. Later, two more camps were established in the area. People gathered at the campsites to show their support.
+    
+    Early on October 31, 2016, a Facebook post said that the Morton County sheriff's department was using Facebook check-ins to target people at the protest camps (CNN 2017). People outside of the protests camp checked-in to Facebook to ‘overwhelm and confuse' law enforcement officials, although police denied tracking activists on social media (CNN 2017; States News Service 2017; Uwire 2016). The Check-in feature allows users to add their current or nearby location to posts on Facebook. However, people can falsify their location check-ins, which is known as location spoofing. Later, more and more people checked-in to the Facebook to keep an eye on the event.
+  
  
 ## 3. Methodology:
 This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). (Facebook data)2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.  
