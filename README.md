@@ -30,45 +30,40 @@ The purpose of this dynamic story map project is to show spoofing check-ins on F
 ## 3. Methodology:
 This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). Facebook data 2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.  
  
-### 1.Crawling
+### 1).Crawling
 
 We use Python to write a program helping us crawling down the data automatically. The functions of this program include 1). Open a browser 2).Go to Facebook, 3). Search "Standing Rock call check-in,” 4).Scroll down automatically, and set 5 seconds to wait for a response and cache per scroll, 5).Until the end of scrolling, start crawling down the post and other information like username, and store these data in a database, and 6).pick up the categories which are useful, then transform the data into a .js file.
  
-2.QGIS
+### 2).QGIS
 
 Most data are in national scale. To reduce the size file, we use the clip tool to select aquifer, river, and reservation area. Also, we will QGIS to transfer all shapefile data into a geo JSON file so that the data can be inserted into the web page.
  
-3. Design and Program
+### 3).Design and Program
 
-  • Storymap: Storymap is the core frame of this website. This storymap are organically made up by several scenes: Home, Info, StandingRock, Pipeline, Camps, Check-in, Spoofed Check-ins, Why Spoofing?, and Spatial and Semantic Explore. For each scene, there are a panel and a map. We put context in the main panel part and use a map consists of basemap, thematic layers and interactive features to help, illustrating the setting.
+  • **Storymap**: Storymap is the core frame of this website. This storymap are organically made up by several scenes: Home, Info, StandingRock, Pipeline, Camps, Check-in, Spoofed Check-ins, Why Spoofing?, and Spatial and Semantic Explore. For each scene, there are a panel and a map. We put context in the main panel part and use a map consists of basemap, thematic layers and interactive features to help, illustrating the setting.
   
-   • Leaflet: Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. We use this to support the map part.
+   • **Leaflet**: Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. We use this to support the map part.
     
-   • Bootstrap: framework of the Info scene. helps to line up the icons and text.
+   • **Bootstrap**: framework of the Info scene. helps to line up the icons and text.
     
-   • Markercluster Photo (for scenes StandingRock, Pipeline and Camps): use this method to show geo-tagged photos. photos are shown on the map as clusters of thumbnails, and hovering on each thumbnail would open the image in the left panel.
+   • **Markercluster Photo** (for scenes StandingRock, Pipeline and Camps): use this method to show geo-tagged photos. photos are shown on the map as clusters of thumbnails, and hovering on each thumbnail would open the image in the left panel.
     
-   • d3 trendline (for scene Info): use it to draw the trend line of Google Trend data, csv file.
+   • **d3 trendline** (for scene Info): use it to draw the trend line of Google Trend data, csv file.
     
-   • Hexbin: use the hexbin to visualize Facebook posts instead of traditional scatter points, helping people understand the post count in one area better.
+   • **Hexbin**: use the hexbin to visualize Facebook posts instead of traditional scatter points, helping people understand the post count in one area better.
     
-   • color design:1). use palettr to search the thematic color of tribe, oil, water, etc. 2).use colorbrewer to adapt the wordcloud color.
+   • **color design**:1). use palettr to search the thematic color of tribe, oil, water, etc. 2).use colorbrewer to adapt the wordcloud color.
     
-   • wordcloud: to show what people were talking about. It use JS library to analyze the post content we crawling down from Facebook.
+   • **wordcloud**: to show what people were talking about. It use JS library to analyze the post content we crawling down from Facebook.
     
-   • globe minimap: show in the right down corner about where the map scene located on earth.
+   • **globe minimap**: show in the right down corner about where the map scene located on earth.
    
-   • Illustrator: Adobe software helping us to design the favicon.
+   • **Illustrator**: Adobe software helping us to design the favicon.
     
-   • Font Awesome icons: for the Info scene, we use font awesome icons: location, user, male, and Facebook.
+   • **Font Awesome icons**: for the Info scene, we use font awesome icons: location, user, male, and Facebook.
     
-   • Google Fonts: Use Google Fonts to define the text fonts(both paragraph and map label).
+   • **Google Fonts**: Use Google Fonts to define the text fonts(both paragraph and map label).
     
-
- 
- 
- 
- 
 ## 4. Tutorial:
 1.This is a navigation bar. It includes all subjects of this web map. The check-in bottom contains three sub-subjects. You can click on the subject, and jump to a specific page. 
 2.These four icons connect to about page and three external links. The first one from the left is the about page button. The second one (with Facebook symbol) and the third one(with Twitter symbol) allow you to share this website on your face, and the last one is a button to direct you Github page, where you can find the code and data of this page. 
