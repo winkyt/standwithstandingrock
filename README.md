@@ -1,14 +1,4 @@
 # Stand with #Standing Rock
-
-The Dakota Access Pipeline Protest (#NoDAPL) began in early 2016 in reaction to the approved construction of Energy Transfer Partners' Dakota Access Pipeline near the Standing Rock Indian Reservation.
-
-Local native American and environmentalists were gathered at both Standing Rock and #Standing Rock on Facebook to express their deep concerns.
-
-Due to the fierce local conflict triggered by the proposed pipeline, environmental protestors were forced to leave their camping area at the Standing Rock. Today, it has become nearly impssible for people to access the former camping area. Even though, an increasing number of social media users still stand with #StandingRock via spoofing their check-ins on Facebook.
-
-///////////////////////////////////////////////////////////////////////////
-
-**Project Summary**
  
 ## 1. Project Summary 
 Following months of conflict, triggered by a proposed pipeline, in January 2017, environmental protestors were forced to leave their camping area at Standing Rock. Today, it has become nearly impossible for people to access the former camping area. Even though protestors no longer stay there, a growing number of social media users still stand with #StandingRock by spoofing their check-ins on Facebook. With storymap techniques, this dynamic map geo-narrates the whole story of the environmental protest at Standing Rock and #standing rock.
