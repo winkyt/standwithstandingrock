@@ -17,6 +17,8 @@ Early on October 31, 2016, a Facebook post said that the Morton County sheriff's
 
 The purpose of this dynamic story map project is to show spoofing check-ins on Facebook related to the Dakota Access Pipeline Protest(#NoDAPL) in Standing Rock recreation area, and how people use social media to speak up for themselves or show their supports.
   
+  ![](https://github.com/winkyt/standwithstandingrock/blob/master/img/readme/readme_1.png)
+  
 ## 3. Methodology:
 This dynamic story map project includes multiple maps, graphics, photos, video, and text information. After gathering all data, the process of data is broken down into the following steps 1). Facebook data 2). use QGIS to process the geospatial data, 3).design and program files of HTML, CSS, and JavaScript.  
  
@@ -68,6 +70,10 @@ Most data are in national scale. To reduce the size file, we use the clip tool t
 6."next page" button go to the left corner but still serves the same function as step 3
 
 7.Check what people said about the standing rock event, move the mouse to the icon "F" at the page of check-in. 
+
+![](https://github.com/winkyt/standwithstandingrock/blob/master/img/readme/readme_2.png)
+![](https://github.com/winkyt/standwithstandingrock/blob/master/img/readme/readme_3.png)
+![](https://github.com/winkyt/standwithstandingrock/blob/master/img/readme/readme_4.png)
  
 ## 5. Result:
 The usage of geolocation-based social media not only concentrate on personal interests. Through the case studying of standing rock, it shows that people could use this function to show their supports for specific events. From the Facebook Check-in page, 337,589 people check-ins to the site of standing rock. According to Google Trends, the search volume of term “standing rock” peaked at the end of 2016. Though the official map made by the company says the pipeline does not cross any land belonging to the Standing Rock Sioux, you can tell from our map that there are aquifer and lakes near the pipeline. The oil leak may infect the environment like the water and soil after some time, that is why it is important to buffer area when constructing such kind of infrastructure (States News Service 2017).
